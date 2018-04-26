@@ -1,0 +1,18 @@
+<% include head_before_title %>
+Connect
+<% include head_after_title %>
+
+<% include signed_navbar %>
+
+<div class="container">
+    <table>
+        <tr><h1>Connection information to the Virtual Machine</h1></tr>
+        <tr><h3> <% if(connectionErrorMessage) {%><%- connectionErrorMessage %><%}%></h3></tr>
+        <tr><th><h3>Reservation ID:</h3></th><th><h3> <%- reservation._id %></h3></th></tr>
+        <tr><th><h3>IP address:</h3></th><th><h3> <%- connection.ip %></h3></th></tr>
+        <tr><th><h3>User:</h3></th><th><h3> <%- connection.user %></h3></th></tr>
+        <tr><th><h3>Password:</h3></th><th><h3> <%- connection.password %> </h3></th></tr>
+    </table>
+</div>
+
+<% include footer %>

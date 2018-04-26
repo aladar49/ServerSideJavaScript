@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Profil</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top col-lg-12">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="reservation.html.html">VM Reservation</a>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <li><a href="login.html">Logout</a></li>
+        </div>
+        <div class="nav navbar-nav navbar-right">
+            <li><a href="profil.html">Profil</a></li>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <form data-toggle="validator" role="form">
+        <div class="form-group">
+            <label for="inputName" class="control-label">Name</label>
+            <input type="text" class="form-control" id="inputName" value="Farkas Aladár">
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="control-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" value="example@example.com"
+                   data-error="Bruh, that email address is invalid">
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <label for="inputBirth" class="control-label">Birthday</label>
+            <input type="date" class="form-control" id="inputBirth" value="1991-01-01" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="control-label">Password</label>
+            <div class="form-inline row">
+                <div class="form-group col-sm-6">
+                    <input type="password" data-minlength="6" class="form-control" id="inputPassword"
+                           placeholder="Password" required>
+                    <div class="help-block">Minimum of 6 characters</div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword"
+                           data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <a type="submit" class="btn btn-primary" href="reservation.html">Edit</a>
+            <a type="submit" class="btn btn-default" href="login.html">Delete</a>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

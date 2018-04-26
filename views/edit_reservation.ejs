@@ -1,0 +1,40 @@
+<% include head_before_title %>
+Edit reservation
+<% include head_after_title %>
+
+<% include signed_navbar %>
+
+<div class="container">
+    <form data-toggle="validator" role="form">
+        <div class="form-group">
+            <label for="inputName" class="control-label">Name</label>
+            <select name="name" type="select" class="form-control" id="inputName">
+                <% var name = ""; if(reservation) { name = reservation.name} %>
+                <option <% if(name === "Debian") {%> selected <%}%> >Debian</option>
+                <option <% if(name === "Windows 10") {%> selected <%}%> >Windows 10</option>
+                <option <% if(name === "Storage") {%> selected <%}%> >Storage</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="vCPU" class="control-label">Number of vCPU</label>
+            <input type="number" name="vCPU" min="1" max="8" step="1" class="form-control" id="vCPU" value="<% if(reservation) {%><%- reservation.vCPU %><%}%>" required>
+        </div>
+        <div class="form-group">
+            <label for="RAM" class="control-label">RAM</label>
+            <input type="number" name="RAM" min="16" max="256" step="1" class="form-control" id="RAM" value="<% if(reservation) {%><%- reservation.RAM %><%}%>" required>
+        </div>
+        <div class="form-group">
+            <label for="when" class="control-label">Start time</label>
+            <input type="datetime-local" name="when" class="form-control" id="when" value="<% if(reservation) {%><%- reservation.when %><%}%>" required>
+        </div>
+        <div class="form-group">
+            <label for="hours" class="control-label">How many hours</label>
+            <input type="number" name="hours" min="1" max="8" step="1" class="form-control" id="hours" value="<% if(reservation) {%><%- reservation.hours %><%}%>" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Create" href="/reservation/<% if(reservation) {%><%- reservation._id %><%}%>">
+        </div>
+    </form>
+</div>
+
+<% include footer %>

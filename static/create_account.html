@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create account</title>
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top col-lg-12">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="login.html">VM Reservation</a>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <form data-toggle="validator" role="form">
+        <div class="form-group">
+            <label for="inputName" class="control-label">Name</label>
+            <input type="text" class="form-control" id="inputName" placeholder="Full name" required>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="control-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail" placeholder="Email"
+                   data-error="Bruh, that email address is invalid" required>
+            <div class="help-block with-errors"></div>
+        </div>
+        <div class="form-group">
+            <label for="inputBirth" class="control-label">Birthday</label>
+            <input type="date" class="form-control" id="inputBirth" required>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="control-label">Password</label>
+            <div class="form-inline row">
+                <div class="form-group col-sm-6">
+                    <input type="password" data-minlength="6" class="form-control" id="inputPassword"
+                           placeholder="Password" required>
+                    <div class="help-block">Minimum of 6 characters</div>
+                </div>
+                <div class="form-group col-sm-6">
+                    <input type="password" class="form-control" id="inputPasswordConfirm" data-match="#inputPassword"
+                           data-match-error="Whoops, these don't match" placeholder="Confirm" required>
+                    <div class="help-block with-errors"></div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <a type="submit" class="btn btn-primary" href="login.html">Submit</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

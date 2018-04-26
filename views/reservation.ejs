@@ -1,0 +1,53 @@
+<% include head_before_title %>
+Reservation
+<% include head_after_title %>
+
+<% include signed_navbar %>
+
+<div class="container">
+    <script type="text/javascript">
+        var form = document.getElementById("form");
+
+        document.getElementById("create").addEventListener("click", function () {
+            console.log('create');
+        });
+    </script>
+
+    <form data-toggle="validator" role="form" id="form">
+    <p2>Welcome <%- user.name %>!</p2>
+    </br></br>
+    <p2>Your current reservations</p2>
+    <table class="table table-hover" id="table">
+        <thead>
+        <tr class="clickable-row">
+            <th>ID</th>
+            <th>Name</th>
+            <th>vCPU</th>
+            <th>RAM</th>
+            <th>When</th>
+            <th>How many hours</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% reservations.forEach(function(reservation) { %>
+            <tr class="clickable-row">
+                <td><%= reservation.id %></td>
+                <td><%= reservation.name %></td>
+                <td><%= reservation.vCPU %></td>
+                <td><%= reservation.RAM %></td>
+                <td><% var time = reservation.when.replace('T',' '); %><%- time %></td>
+                <td><%= reservation.hours %></td>
+                <td><a class="btn btn-default" href="/connect/<%- reservation.id %>">Connect</a></td>
+                <td><a class="btn btn-default" href="/reservation/<%- reservation.id %>">Edit</a></td>
+                <td><a class="btn btn-default" href="/reservation/<%- reservation.id %>/delete">Delete</a><td>
+            </tr>
+        <% }); %>
+        </tbody>
+    </table>
+
+        <a type="submit" class="btn btn-success" href="/reservation/new">Create</a>
+
+    </form>
+</div>
+
+<% include footer %>
